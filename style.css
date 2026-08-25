@@ -1,0 +1,1075 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #f5f5f5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+
+    background: linear-gradient(
+        rgba(0,0,0,.7),
+        transparent
+    );
+    transition: background .4s ease, backdrop-filter .4s ease, border-color .4s ease,;
+}
+
+nav.scrolled {
+    background: rgba(8, 8, 8, .85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+
+    letter-spacing: 5px;
+}
+
+.logo span {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: #888;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    height: 100vh;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 8%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.9),
+            rgba(0,0,0,.35)
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.2),
+            #080808
+        ),
+
+        url("assets/images/hero.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: heroFade 2.1s ease forwards;
+}
+
+.label {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #aaa;
+}
+
+.hero h1 {
+
+    font-size:
+        clamp(55px, 9vw, 120px);
+
+    line-height: .9;
+
+    margin: 25px 0;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+}
+
+.description {
+
+    color: #aaa;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border: 1px solid #aaa;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.button:hover {
+
+    background: white;
+
+    color: black;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+section {
+
+    padding: 130px 8%;
+}
+
+.section-label {
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #666;
+
+    margin-bottom: 15px;
+}
+
+section h2 {
+
+    font-size:
+        clamp(45px, 7vw, 85px);
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 40px;
+
+    flex-wrap: wrap;
+}
+
+.categories button {
+
+    background: transparent;
+
+    border: 1px solid #333;
+
+    color: #aaa;
+
+    padding: 10px 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.categories button:hover {
+
+    background: white;
+
+    color: black;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 50px 25px;
+}
+
+.project {
+
+    overflow: hidden;
+}
+
+.image-placeholder {
+
+    height: 550px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #222,
+            #0e0e0e
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #555;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    transition: .5s;
+}
+
+.project:hover
+.image-placeholder {
+
+    transform: scale(.98);
+
+    background: #1b1b1b;
+}
+
+.project h3 {
+
+    margin-top: 18px;
+
+    font-size: 18px;
+
+    font-weight: 400;
+}
+
+.project p {
+
+    margin-top: 6px;
+
+    color: #666;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1fr)
+        minmax(300px, 1fr);
+
+    gap: 10%;
+
+    align-items: center;
+
+    max-width: 1300px;
+}
+
+.about-image {
+
+    overflow: hidden;
+
+    aspect-ratio: 4 / 5;
+}
+
+.about-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: grayscale(100%);
+
+    transition: .7s;
+}
+
+.about-image:hover img {
+
+    transform: scale(1.04);
+
+    filter: grayscale(0%);
+}
+
+.about-content {
+
+    max-width: 600px;
+}
+
+.about-text {
+
+    max-width: 600px;
+
+    color: #999;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+.about-details {
+
+    display: flex;
+
+    gap: 60px;
+
+    margin-top: 45px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #222;
+}
+
+.about-details div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.about-details span {
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #555;
+}
+
+.about-details strong {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 400;
+}
+
+.about-text {
+
+    max-width: 700px;
+
+    color: #999;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10%;
+
+    align-items: center;
+
+    max-width: 1300px;
+
+    margin: auto;
+}
+
+.contact-header {
+
+    max-width: 600px;
+}
+
+.contact-description {
+
+    color: #888;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    max-width: 450px;
+}
+
+
+/* CONTACT LINKS */
+
+.contact-links {
+
+    border-top: 1px solid #222;
+}
+
+.contact-link {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 30px 0;
+
+    border-bottom: 1px solid #222;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: .4s;
+}
+
+.contact-link span {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #666;
+
+    margin-bottom: 8px;
+}
+
+.contact-link strong {
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+.contact-arrow {
+
+    font-size: 25px !important;
+
+    color: #555 !important;
+
+    margin: 0 !important;
+
+    transition: .4s;
+}
+
+.contact-link:hover {
+
+    padding-left: 15px;
+}
+
+.contact-link:hover
+.contact-arrow {
+
+    color: white !important;
+
+    transform: translate(5px, -5px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    border-top: 1px solid #222;
+
+    padding: 40px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #555;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+    h1 {
+    font-size: clamp(42px, 13vw, 72px);
+    line-height: .95;
+}
+
+h2 {
+    font-size: clamp(38px, 11vw, 60px);
+    line-height: .95;
+}
+
+section {
+    padding-left: 6%;
+    padding-right: 6%;
+}
+
+.portfolio-image {
+    height: 420px;
+}
+
+.lightbox {
+    padding: 20px;
+}
+
+.lightbox-content img {
+    max-width: 94vw;
+    max-height: 75vh;
+}
+
+.gallery-button {
+    width: 42px;
+    height: 42px;
+    font-size: 30px;
+}
+
+.gallery-button.prev {
+    left: 10px;
+}
+
+.gallery-button.next {
+    right: 10px;
+}
+
+.close-lightbox {
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+}
+    .contact {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 60px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .contact-description {
+        font-size: 15px;
+    }
+    
+    .contact-link {
+        padding: 25px 0;
+    }
+    
+    .scroll-indicator{
+        left: 6%;
+        bottom: 25px;
+    }
+
+    .scroll-indicator p {
+        font-size: 7px;
+    }
+
+    .hero {
+        background-position: center;
+    }
+
+    nav {
+
+        padding: 20px 5%;
+    }
+
+    .menu {
+
+        display: none;
+    }
+
+    .hero {
+
+        padding: 0 6%;
+    }
+
+    .hero h1 {
+
+        font-size: 55px;
+
+        letter-spacing: -2px;
+    }
+
+    section {
+
+        padding: 90px 6%;
+    }
+
+    .gallery {
+
+        grid-template-columns: 1fr;
+    }
+
+    .image-placeholder {
+
+        height: 450px;
+    }
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+}.project img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    display: block;
+    transition: .5s;
+}
+
+.project:hover img {
+    transform: scale(1.03);
+}/* =========================
+   PORTFOLIO IMAGE
+========================= */
+
+.portfolio-image {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.02);
+    opacity: .85;
+}/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .95);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    padding: 40px;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+
+    object-fit: contain;
+}
+
+.close-lightbox {
+
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 45px;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+.gallery-button {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid #555;
+
+    background: rgba(0, 0, 0, .5);
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.gallery-button:hover {
+
+    background: white;
+
+    color: black;
+}
+
+.gallery-button.prev {
+    left: 30px;
+}
+
+.gallery-button.next {
+    right: 30px;
+}
+/* =========================
+   FILTER BUTTON
+========================= */
+
+.filter-btn {
+    background: transparent;
+
+    border: 1px solid #333;
+
+    color: #777;
+
+    padding: 10px 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.filter-btn:hover {
+    border-color: #aaa;
+    color: white;
+}
+
+.filter-btn.active {
+    background: white;
+    border-color: white;
+    color: black;
+}.project {
+    animation: portfolioFade .5s ease;
+}
+
+@keyframes portfolioFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}/* =========================
+   LIGHTBOX CONTENT
+========================= */
+
+.lightbox-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    max-width: 90vw;
+
+    max-height: 90vh;
+}
+
+.lightbox-content img {
+
+    max-width: 85vw;
+
+    max-height: 78vh;
+
+    object-fit: contain;
+}
+
+.lightbox-info {
+
+    text-align: center;
+
+    margin-top: 18px;
+}
+
+.lightbox-info h3 {
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.lightbox-info p {
+
+    margin-top: 6px;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: #777;
+
+    text-transform: uppercase;
+}/* =========================
+   HERO ANIMATION
+========================= */
+
+@keyframes heroFade {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}/* =========================
+   SCROLL INDICATOR
+========================= */
+
+.scroll-indicator {
+
+    position: absolute;
+
+    bottom: 35px;
+
+    left: 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    color: #777;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+}
+
+.scroll-indicator span {
+
+    width: 35px;
+
+    height: 1px;
+
+    background: #777;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.scroll-indicator span::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -100%;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: white;
+
+    animation:
+        scrollLine 2s infinite;
+}
+
+@keyframes scrollLine {
+
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+    }
+
+}/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.primary-button {
+
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    transition: .35s;
+}
+
+.primary-button:hover {
+
+    background: transparent;
+
+    color: white;
+
+    box-shadow:
+        inset 0 0 0 1px white;
+}
